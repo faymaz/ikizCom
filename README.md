@@ -8,8 +8,8 @@
 
 
 Dexcom 1 : Samsung Galaxy Note10+, Dexcom App,  812CXX Transmitter 06.09.24, Sensor 9117 07.09.24  
-Dexcom 2 : Samsung Galaxy Note10+, xDrip App,   87TRXX Transmitter Original Battery, 30.06.24, Sensor 9317 17.09.24  
-Dexcom 3 : Iphone 15 Pro Max,       Dexcom App, 87FUXX Transmitter Original Battery, 28.09.24, Sensor 9311 28.09.24  
+Dexcom 2 : Samsung Galaxy Note10+, xDrip App,   87TRXX Transmitter Original Battery 30.06.24, Sensor 9317 17.09.24  
+Dexcom 3 : Iphone 15 Pro Max,       Dexcom App, 87FUXX Transmitter Original Battery 28.09.24, Sensor 9311 28.09.24  
 
 ## Features
 
