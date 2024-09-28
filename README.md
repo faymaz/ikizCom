@@ -47,6 +47,17 @@ dexcom1 = Dexcom(username="your_email_or_phone_1", password="your_password_1", o
 dexcom2 = Dexcom(username="your_email_or_phone_2", password="your_password_2", ous=True)
 ```
 
+If you are outside the USA:
+```python
+dexcom = Dexcom(username="your_email_or_phone", password="your_password", ous=True)
+```
+
+If you are in the USA:
+```python
+dexcom = Dexcom(username="your_email_or_phone", password="your_password")
+```
+
+
 4. Run the script:
 
 ```bash
