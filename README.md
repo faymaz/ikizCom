@@ -1,3 +1,5 @@
+![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=faymaz.ikizCom)
+
 # ikizCom,  Dexcom Dual Monitor, Twin İkiz
 
 ![Dexcom_1](img/dexcom_dual.png)
