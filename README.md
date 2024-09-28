@@ -7,7 +7,7 @@
 ![Dexcom_2](img/dexcom_triple.png)
 
 
-** ikizCom - Dexcom Dual Monitor** is a Python-based tool for monitoring blood glucose levels from two Dexcom CGM (Continuous Glucose Monitoring) devices. It fetches data from both devices, logs the values, timestamps, and trend directions, and calculates the average blood glucose if both sources provide valid data. The results are saved in a temporary file and printed to the terminal.
+**ikizCom - Dexcom Dual Monitor** is a Python-based tool for monitoring blood glucose levels from two Dexcom CGM (Continuous Glucose Monitoring) devices. It fetches data from both devices, logs the values, timestamps, and trend directions, and calculates the average blood glucose if both sources provide valid data. The results are saved in a temporary file and printed to the terminal.
 
 
 Dexcom 1 : Samsung Galaxy Note10+, Dexcom App,  812CXX Transmitter 06.09.24, Sensor 9117 07.09.24  
