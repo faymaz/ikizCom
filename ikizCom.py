@@ -1,5 +1,6 @@
 import os
 import time
+from pathlib import Path
 from pydexcom import Dexcom
 
 # Setup Dexcom authentication for two different accounts or devices
@@ -7,7 +8,7 @@ dexcom1 = Dexcom(username="your_email_or_phone_1", password="your_password_1", o
 dexcom2 = Dexcom(username="your_email_or_phone_2", password="your_password_2", ous=True)
 
 # Path to the file where BG info will be written
-bg_file = "/tmp/bg_info.txt"  # Using /tmp for temporary files
+bg_file = Path.home() / "bg_info.txt"  # Using /tmp for temporary files
 
 # Function to update the BG info file
 def update_bg_info(glucose_value, trend_arrow, timestamp):
