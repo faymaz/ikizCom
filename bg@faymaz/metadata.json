@@ -1,0 +1,9 @@
+{
+    "uuid": "bg@faymaz",
+    "name": "BG Info Extension",
+    "description": "Shows the content of /tmp/bg_info.txt in the GNOME top panel",
+    "version": 1,
+    "shell-version": ["45", "46"],
+    "url": "https://github.com/faymaz/bg",
+    "settings-schema": "org.gnome.shell.extensions.bg"
+}

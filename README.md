@@ -1,10 +1,12 @@
 ![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=faymaz.ikizCom)
 
-# ikizCom,  Dexcom Dual Monitor, Twin İkiz
+# ikizCom,  Dexcom Dual Monitor, Twin İkiz, Triple üçlü
 
 ![Dexcom_1](img/dexcom_dual.png)
 
 ![Dexcom_2](img/dexcom_triple.png)
+
+![Dexcom_3](img/dexcom_triple_gnome_shell.png)
 
 
 **ikizCom - Dexcom Dual Monitor** is a Python-based tool for monitoring blood glucose levels from two Dexcom CGM (Continuous Glucose Monitoring) devices. It fetches data from both devices, logs the values, timestamps, and trend directions, and calculates the average blood glucose if both sources provide valid data. The results are saved in a temporary file and printed to the terminal.
@@ -102,5 +104,5 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 ## Contact
 
-For any issues or questions, please contact ``.
+For any issues or questions, please contact `faymaz@aymaz.org`.
 ```
