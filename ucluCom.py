@@ -67,7 +67,7 @@ def check_glucose():
                 glucose_values.append(glucose_reading_1.value)
                 trend_arrows.append(glucose_reading_1.trend_direction)
                 timestamps.append(glucose_reading_1._datetime)
-                print(f"Dexcom 1: {glucose_reading_1.value} mg/dL {TREND_SYMBOLS.get(glucose_reading_1.trend_direction, '—')} at {glucose_reading_1._datetime}")
+                print(f"\nDexcom 1: {glucose_reading_1.value} mg/dL {TREND_SYMBOLS.get(glucose_reading_1.trend_direction, '—')} at {glucose_reading_1._datetime}")
             else:
                 print("Dexcom 1: No data available")
 
