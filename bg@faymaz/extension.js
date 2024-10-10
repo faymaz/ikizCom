@@ -12,7 +12,7 @@ export default class BGExtension extends Extension {
     enable() {
         this._indicator = new PanelMenu.Button(0.0, this.metadata.name, false);
 
-        // St.Label bileşeni oluşturuyoruz
+        // Create St.Label component
         this._label = new St.Label({
             text: 'Loading...',
             y_align: Clutter.ActorAlign.CENTER
@@ -21,13 +21,13 @@ export default class BGExtension extends Extension {
         this._indicator.add_child(this._label);
         Main.panel.addToStatusArea(this.metadata.uuid, this._indicator);
 
-        // 1 dakikada bir güncelleme yapılacak
+        // Update every 1 minute
         this._timeout = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 60, () => {
             this._updatePanelText();
             return true;
         });
 
-        this._updatePanelText();  // Başlangıçta güncelleme yap
+        this._updatePanelText();  // Initial update
     }
 
     disable() {
@@ -41,35 +41,37 @@ export default class BGExtension extends Extension {
             this._timeout = null;
         }
     }
+
     _updatePanelText() {
         try {
             let file = Gio.File.new_for_path(filePath);
             if (!file.query_exists(null)) {
-                log("Dosya mevcut değil: bg_info.txt");
+                log("File does not exist: bg_info.txt");
                 return;
             }
-    
+
             let [ok, content] = GLib.file_get_contents(filePath);
             if (!ok) {
-                logError(new Error("Dosya okunamadı: bg_info.txt"));
+                logError(new Error("Failed to read file: bg_info.txt"));
                 return;
             }
-    
+
             let contentStr = content.toString();
-    
-            // ANSI renk kodlarını ve gereksiz kısımları temizleyelim
-            contentStr = contentStr.replace(/\u001b\[93m|\u001b\[0m/g, '');  // Renk kodlarını kaldır
-            contentStr = contentStr.replace(/ at \d{4}-\d{2}-\d{2} (\d{2}:\d{2}):\d{2}/, ' $1');  // Tarihi sadece saat olarak al
-            contentStr = contentStr.replace(/(\d+) mg\/dL/, '$1 mg/dL');  // mg/dL kısmını KŞ ile değiştir
-            
-            // Yalnızca gerekli bilgileri formatlıyoruz
-            log(`Düzenlenmiş içerik: ${contentStr}`);
-    
-            // St.Label bileşenini güncelle
+
+            // Remove ANSI color codes and unnecessary parts
+            //contentStr = contentStr.replace(/\u001b\[93m|\u001b\[0m/g, '');  // Remove color codes
+            contentStr = contentStr.replace(/\u001b\[93m|\u001b\[0m|\u001b\[91m|\u001b\[92m|\033\[91m|\033\[92m/g, '');  // Remove color codes
+            contentStr = contentStr.replace(/ at \d{4}-\d{2}-\d{2} (\d{2}:\d{2}):\d{2}/, ' $1');  // Extract only time
+            contentStr = contentStr.replace(/(\d+) mg\/dL/, '$1 mg/dL');  // Keep mg/dL part only
+
+            // Log formatted content for debugging
+            log(`Formatted content: ${contentStr}`);
+
+            // Update the St.Label widget with cleaned-up text
             if (this._label) {
-                this._label.set_text(contentStr);  // Düzenlenmiş metni ayarla
+                this._label.set_text(contentStr);  // Set the cleaned-up text
             } else {
-                log("Label bulunamadı!");
+                log("Label not found!");
             }
         } catch (e) {
             logError(e);
